@@ -2,6 +2,7 @@ import './Shop.css'
 import Product from './Product'
 import Products from './Products'
 import { useEffect, useState } from 'react'
+import Cart from './Cart'
 const Shop = () => {
   const [products, setProducts] = useState([])
   const[cart,setCart]=useState([])
@@ -23,8 +24,8 @@ const Shop = () => {
         {products.map(product => <Product key={product.id}  product={ product}  handleAddtoCart={handleAddtoCart} />)}
      </div>
           <div className='cart-container'>
-        <h1 style={{marginBottom:"10px"}}>Order Summery</h1>
-        <h3 style={{color:'orange'}}>Selected Items:{cart.length}</h3>
+        
+        <Cart cart={cart} />
               
      </div>
     </div>
